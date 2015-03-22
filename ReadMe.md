@@ -2,6 +2,8 @@
 
 This is a magic Button which could call a picker keyboard that can be called in input views.
 
+![icon](http://www.gfycat.com/LikelyUntidyDwarfmongoose)
+
 you can create the button in 2 ways:
 
 1. in the IB
