@@ -2,7 +2,7 @@
 
 This is a magic Button which could call a picker keyboard that can be called in input views.
 
-![icon](http://www.gfycat.com/LikelyUntidyDwarfmongoose)
+![icon](https://github.com/Jasonbroker/ZCDatePickerButton/blob/master/Mar%2022,%202015%2010:06.gif?raw=true)
 
 you can create the button in 2 ways:
 
