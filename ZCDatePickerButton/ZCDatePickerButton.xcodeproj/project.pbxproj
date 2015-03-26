@@ -15,6 +15,7 @@
 		96F07EDA1ABE551700FAAC6E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96F07ED81ABE551700FAAC6E /* LaunchScreen.xib */; };
 		96F07EE61ABE551700FAAC6E /* ZCDatePickerButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F07EE51ABE551700FAAC6E /* ZCDatePickerButtonTests.m */; };
 		96F07EF11ABE554500FAAC6E /* ZC_InputViewButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F07EF01ABE554500FAAC6E /* ZC_InputViewButton.m */; };
+		96F07EFA1ABFBF5700FAAC6E /* ZCPickerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F07EF91ABFBF5700FAAC6E /* ZCPickerButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,9 @@
 		96F07EE51ABE551700FAAC6E /* ZCDatePickerButtonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCDatePickerButtonTests.m; sourceTree = "<group>"; };
 		96F07EEF1ABE554500FAAC6E /* ZC_InputViewButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZC_InputViewButton.h; sourceTree = "<group>"; };
 		96F07EF01ABE554500FAAC6E /* ZC_InputViewButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZC_InputViewButton.m; sourceTree = "<group>"; };
+		96F07EF81ABFBF5700FAAC6E /* ZCPickerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZCPickerButton.h; path = ../../../../../BedTime/BedTime/libs/ZCPickerButton.h; sourceTree = "<group>"; };
+		96F07EF91ABFBF5700FAAC6E /* ZCPickerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZCPickerButton.m; path = ../../../../../BedTime/BedTime/libs/ZCPickerButton.m; sourceTree = "<group>"; };
+		96F07EFB1ABFE4EF00FAAC6E /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 			children = (
 				96F07EEF1ABE554500FAAC6E /* ZC_InputViewButton.h */,
 				96F07EF01ABE554500FAAC6E /* ZC_InputViewButton.m */,
+				96F07EF81ABFBF5700FAAC6E /* ZCPickerButton.h */,
+				96F07EF91ABFBF5700FAAC6E /* ZCPickerButton.m */,
 				96F07ECD1ABE551700FAAC6E /* AppDelegate.h */,
 				96F07ECE1ABE551700FAAC6E /* AppDelegate.m */,
 				96F07ED01ABE551700FAAC6E /* ViewController.h */,
@@ -101,6 +107,7 @@
 		96F07EC91ABE551700FAAC6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				96F07EFB1ABFE4EF00FAAC6E /* Reveal.framework */,
 				96F07ECA1ABE551700FAAC6E /* Info.plist */,
 				96F07ECB1ABE551700FAAC6E /* main.m */,
 			);
@@ -225,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96F07ED21ABE551700FAAC6E /* ViewController.m in Sources */,
+				96F07EFA1ABFBF5700FAAC6E /* ZCPickerButton.m in Sources */,
 				96F07ECF1ABE551700FAAC6E /* AppDelegate.m in Sources */,
 				96F07EF11ABE554500FAAC6E /* ZC_InputViewButton.m in Sources */,
 				96F07ECC1ABE551700FAAC6E /* main.m in Sources */,
@@ -351,8 +359,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ZCDatePickerButton",
+				);
 				INFOPLIST_FILE = ZCDatePickerButton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -361,8 +379,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ZCDatePickerButton",
+				);
 				INFOPLIST_FILE = ZCDatePickerButton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -420,6 +448,7 @@
 				96F07EEB1ABE551700FAAC6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96F07EEC1ABE551700FAAC6E /* Build configuration list for PBXNativeTarget "ZCDatePickerButtonTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +457,7 @@
 				96F07EEE1ABE551700FAAC6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

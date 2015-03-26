@@ -7,10 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "ZC_InputViewButton.h"
+#import "ZCPickerButton.h"
 
-@interface ViewController ()<ZC_InputViewButtonDelegate>
-@property (weak, nonatomic) IBOutlet ZC_InputViewButton *myBtn;
+@interface ViewController ()<ZCPickerButtonDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
+@property (weak, nonatomic) IBOutlet ZCPickerButton *myBtn;
 
 @end
 
@@ -24,24 +24,66 @@
     }];
     
     self.myBtn.myDelegate = self;
+    self.myBtn.picker.delegate = self;
+    
 }
 
-- (void)inputButton:(ZC_InputViewButton *)inputButton cancelButtonPressed:(UIBarButtonItem *)sender{
+#pragma mark - data source
+
+- (void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+
+{
+    
+    return 2;     //这个picker里的组键数
+}
+
+
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+
+{
+    
+    return 3;  //数组个数
+    
+}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+    
+    UILabel *label;
+    if (view == nil) {
+        
+        label = [[UILabel alloc] init];
+        label.textAlignment = NSTextAlignmentCenter;
+    }
+    
+    label.text = @"nima";
+    label.textColor = [UIColor whiteColor];
+    
+    return label;
+}
+
+
+
+
+///
+- (void)inputButton:(ZCPickerButton *)inputButton cancelButtonPressed:(UIBarButtonItem *)sender{
     
     NSLog(@"You canceled");
     
 }
 
-- (void)inputButton:(ZC_InputViewButton *)inputButton doneButtonPressed:(UIBarButtonItem *)sender{
+- (void)inputButton:(ZCPickerButton *)inputButton doneButtonPressed:(UIBarButtonItem *)sender{
     
     NSLog(@"Done");
 }
 
-- (void)inputButton:(ZC_InputViewButton *)inputButton pickerValueDidChanged:(UIDatePicker *)picker{
-    
-    [self.myBtn setTitle:[NSString stringWithFormat:@"%@", self.myBtn.date] forState:UIControlStateNormal];
-    
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
