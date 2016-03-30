@@ -28,12 +28,7 @@ assign the viewcontroller to be the delegete to handle these methods.
 You can choose the date picker mode from `UIDatePickerMode` and get date from `.date` property.
 
 
-**However, DONT TRY TO USE THIS FRAMEWORK IN COCOA(OS X)**
-
-IT IS LIGHTWEIGHT FRAMEWORK AND OSX IS NOT SUPPORTED!
-
-I am an iOS developer and OS X is beyond me. Sry guys.
-
+**DONT TRY TO USE THIS FRAMEWORK IN COCOA(OS X)**
 
 license: MIT 
 
